@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { Button } from './Button';
-import { TaskCard } from './TaskCard';
-import { TaskForm } from './TaskForm';
+import { Button } from '../components/Button';
+import { TaskCard } from '../components/TaskCard';
+import { TaskForm } from '../components/TaskForm';
 import { Plus, Filter } from 'lucide-react';
 
 type TaskFilter = 'all' | 'pending' | 'in-progress' | 'completed';
