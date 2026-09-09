@@ -1,0 +1,88 @@
+export const coursesByMajor: { [major: string]: string[] } = {
+  'Computer Science': [
+    'Data Structures',
+    'Algorithms',
+    'Database Management',
+    'Web Development',
+    'Machine Learning',
+    'Operating Systems',
+    'Computer Networks',
+    'Software Engineering',
+  ],
+  Engineering: [
+    'Calculus',
+    'Physics',
+    'Engineering Drawing',
+    'Thermodynamics',
+    'Mechanics',
+    'Circuit Analysis',
+    'Signal Processing',
+    'Control Systems',
+  ],
+  Mathematics: [
+    'Calculus',
+    'Linear Algebra',
+    'Abstract Algebra',
+    'Real Analysis',
+    'Complex Analysis',
+    'Differential Equations',
+    'Numerical Methods',
+    'Discrete Mathematics',
+  ],
+  Physics: [
+    'Classical Mechanics',
+    'Thermodynamics',
+    'Electromagnetism',
+    'Quantum Mechanics',
+    'Optics',
+    'Modern Physics',
+    'Wave Theory',
+    'Particle Physics',
+  ],
+  Chemistry: [
+    'General Chemistry',
+    'Organic Chemistry',
+    'Inorganic Chemistry',
+    'Physical Chemistry',
+    'Analytical Chemistry',
+    'Biochemistry',
+    'Lab Techniques',
+    'Chemical Kinetics',
+  ],
+  Biology: [
+    'Cell Biology',
+    'Genetics',
+    'Molecular Biology',
+    'Ecology',
+    'Evolution',
+    'Microbiology',
+    'Anatomy',
+    'Physiology',
+  ],
+  'Business Administration': [
+    'Accounting',
+    'Finance',
+    'Marketing',
+    'Management',
+    'Economics',
+    'Business Law',
+    'Entrepreneurship',
+    'Organizational Behavior',
+  ],
+  'English Literature': [
+    'Shakespeare',
+    'American Literature',
+    'British Literature',
+    'Literary Criticism',
+    'Poetry Analysis',
+    'Drama',
+    'Fiction Writing',
+    'Academic Writing',
+  ],
+};
+
+export const getMajors = (): string[] => Object.keys(coursesByMajor);
+
+export const getCoursesByMajor = (major: string): string[] => {
+  return coursesByMajor[major] || [];
+};

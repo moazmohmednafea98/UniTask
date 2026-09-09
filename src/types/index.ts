@@ -1,3 +1,5 @@
+import { Task, Subject, Exam, StudySession } from '../types';
+
 export type Priority = 'low' | 'medium' | 'high';
 export type TaskStatus = 'pending' | 'in-progress' | 'completed';
 
@@ -11,13 +13,15 @@ export interface Task {
   estimatedTime: number; // in minutes
   status: TaskStatus;
   createdAt: string;
+  elapsedTime?: number; // actual study time in seconds
+  timerState?: 'idle' | 'running' | 'paused';
 }
 
 export interface Subject {
   id: string;
   name: string;
   professor: string;
-  lectureSchedule: string[]; // e.g., ['Monday 10:00', 'Wednesday 14:00']
+  lectureSchedule: string[];
   color: string;
   icon: string;
   createdAt: string;
@@ -39,8 +43,19 @@ export interface StudySession {
   subject: string;
   date: string;
   startTime: string;
-  duration: number; // in minutes
+  duration: number;
   completed: boolean;
   notes: string;
   createdAt: string;
+}
+
+export interface StudentProfile {
+  name: string;
+  major: string;
+  selectedCourses: string[];
+  onboardingCompleted: boolean;
+}
+
+export interface CoursesByMajor {
+  [major: string]: string[];
 }
